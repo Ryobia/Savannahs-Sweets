@@ -2,6 +2,7 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 
+import Logo from './components/Logo';
 import Home from './components/Home';
 import About from './components/About';
 import Login from './components/Login';
@@ -23,7 +24,7 @@ const client = new ApolloClient({
 function App() {
   return (
    <div>
-     
+     <Logo></Logo>
      <Home></Home>
      <About></About>  
      <Order></Order>
