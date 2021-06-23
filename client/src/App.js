@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+import Home from './components/Home';
+import About from './components/About';
+import Login from './components/Login';
+import Order from './components/Order';
+import OrderOverlay from './components/OrderOverlay';
+
+const client = new ApolloClient({
+  request: (operation) => {
+    const token = localStorage.getItem('id_token')
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
+  },
+  uri: '/graphql',
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+     
+     <Home></Home>
+     <About></About>  
+     <Order></Order>
+     <Login></Login>
+     <OrderOverlay></OrderOverlay>
+   </div>
   );
 }
 
