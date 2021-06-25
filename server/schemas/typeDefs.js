@@ -42,7 +42,6 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     userUpdate(firstName: String, lastName: String, email: String, password: String): User
-    addOrder(): Order
 }
 `;
 
