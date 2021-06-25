@@ -3,9 +3,12 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
 import Home from './components/Home';
+import Nav from "./components/Nav";
 import About from './pages/About';
 import Login from './pages/Login';
 import Order from './components/Order';
+import Product from "./components/Product";
+import RecentOrders from './components/RecentOrders';
 import OrderOverlay from './components/OrderOverlay';
 import ProductList from './components/ProductList';
 import Signup from './pages/Signup';
@@ -36,7 +39,7 @@ function App() {
       case 'recent':
         return <RecentOrders />;
       case 'products':
-        return <Products />;
+        return <Product />;
       case 'login':
         return <Login />;
       default:
