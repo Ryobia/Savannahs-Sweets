@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import { useMutation } from '@apollo/react-hooks';
 
 function Login(props) {
-  /* const [formState, setFormState] = useState({ email: '', password: '' })
+  const [formState, setFormState] = useState({ email: '', password: '' })
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async event => {
@@ -25,7 +25,7 @@ function Login(props) {
       ...formState,
       [name]: value
     });
-  }; */
+  };
 
   return (
     <div className="login">
@@ -34,14 +34,14 @@ function Login(props) {
       </Link> */}
 
       <h2>Login</h2>
-      <form /* onSubmit={handleFormSubmit} */>
+      <form onSubmit={handleFormSubmit}>
         <div className="form-el">
           <label htmlFor="email">Email:</label>
           <input
             name="email"
             type="email"
             id="email"
-            /* onChange={handleChange} */
+            onChange={handleChange}
           />
         </div>
         <div className="form-el">
@@ -50,14 +50,14 @@ function Login(props) {
             name="password"
             type="password"
             id="pwd"
-           /*  onChange={handleChange} */
+            onChange={handleChange}
           />
         </div>
-        {/* {
+        {
           error ? <div>
             <p className="error-text" >The provided credentials are incorrect</p>
           </div> : null
-        } */}
+         }
         <div className="">
           <button type="submit">
             Submit
