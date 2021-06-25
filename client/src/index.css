@@ -1,9 +1,60 @@
-body {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-#icon {
+html, body {
+  text-align: center;
+  min-height: 100%;
+}
 
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+h2 {
+  color: #F4957D;
+}
+
+button {
+  background-color: #AFDFDB;
+  border: 3px solid #75C9CC;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card {
+  border: 3px solid #75C9CC;
+  width: 300px;
+  padding: 10px;
+  margin: 20px;
+  background-color: #FBDCCE;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #F4957D;
+  text-decoration: underline;
+}
+
+.card-image {
+  width: 250px;
+  border: 5px solid #fff;
+}
+
+.about-image {
+  width: 400px;
+  padding: 20px;
+  border: 3px solid #75C9CC
+}
+
+.form-el {
+  padding: 5px 10px;
 }
 
 #ring {

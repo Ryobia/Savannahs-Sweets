@@ -2,12 +2,13 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import Logo from './components/Logo';
 import Home from './components/Home';
-import About from './components/About';
-import Login from './components/Login';
+import About from './pages/About';
+import Login from './pages/Login';
 import Order from './components/Order';
 import OrderOverlay from './components/OrderOverlay';
+import ProductList from './components/ProductList';
+import Signup from './pages/Signup';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -24,11 +25,12 @@ const client = new ApolloClient({
 function App() {
   return (
    <div>
-     <Logo></Logo>
      <Home></Home>
-     <About></About>  
+     <About></About>
      <Order></Order>
      <Login></Login>
+     <Signup></Signup>
+     <ProductList></ProductList>
      <OrderOverlay></OrderOverlay>
    </div>
   );
