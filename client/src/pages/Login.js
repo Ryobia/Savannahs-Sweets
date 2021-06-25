@@ -4,9 +4,10 @@ import Auth from '../utils/auth';
 /* import { Link } from "react-router-dom"; */
 import { useMutation } from '@apollo/react-hooks';
 
-function Login(props) {
+const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' })
   const [login, { error }] = useMutation(LOGIN);
+  const { setCurrentPage } = props;
 
   const handleFormSubmit = async event => {
     event.preventDefault();
@@ -29,15 +30,12 @@ function Login(props) {
 
   return (
     <div className="login">
-      {/* <Link to="/signup">
-        ← Go to Signup
-      </Link> */}
-
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="form-el">
-          <label htmlFor="email">Email:</label>
+          <label className="form-label" htmlFor="email">Email:</label>
           <input
+            className="form-input"
             name="email"
             type="email"
             id="email"
@@ -45,8 +43,9 @@ function Login(props) {
           />
         </div>
         <div className="form-el">
-          <label htmlFor="pwd">Password:</label>
+          <label className="form-label" htmlFor="pwd">Password:</label>
           <input
+            className="form-input"
             name="password"
             type="password"
             id="pwd"
@@ -60,10 +59,13 @@ function Login(props) {
          }
         <div className="">
           <button type="submit">
-            Submit
+            Submit  
           </button>
         </div>
       </form>
+      <div>
+        <p>Don't have a login? Sign up <a href="#signup"><span onClick={() => setCurrentPage("signup")}>here</span></a></p>
+      </div>
     </div>
   );
 }
