@@ -12,7 +12,7 @@ type User {
 type Order {
     _id: ID
     orderDate: String
-    qauntity: Int
+    quantity: Int
     products: [Product]
 }
 
@@ -22,6 +22,27 @@ type Product {
     description: String
     image: String
     price: Float
+}
+
+type Auth {
+    token: ID!
+    user: User
+}
+
+type Query {
+    me: User
+    users: [User]
+    products: [Product]
+    product:(_id: ID!): Product
+    order(_id: ID!): Order
+    orders: [Order]
+}
+
+type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    userUpdate(firstName: String, lastName: String, email: String, password: String): User
+    addOrder(products: [ID]!, quantity: Int!): Order
 }
 `;
 
