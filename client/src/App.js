@@ -41,7 +41,9 @@ function App() {
       case 'products':
         return <Product />;
       case 'login':
-        return <Login />;
+        return <Login currentpage={currentpage} setCurrentPage={setCurrentPage}/>;
+      case 'signup':
+        return <Signup />;
       default:
         return <Home />;
     }

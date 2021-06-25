@@ -32,16 +32,15 @@ type Auth {
 type Query {
     me: User
     users: [User]
-    products: [Product]
-    product:(_id: ID!): Product
-    order(_id: ID!): Order
-    orders: [Order]
 }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+<<<<<<< HEAD
     userUpdate(firstName: String, lastName: String, email: String, password: String): User
+=======
+>>>>>>> 344a59809d61c5d0b5375ab5959f5ae44cdd4ffe
     
 }
 `;

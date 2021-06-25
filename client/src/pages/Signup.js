@@ -34,11 +34,12 @@ function Signup(props) {
         ← Go to Login
       </Link> } */}
 
-      <h2>Signup</h2>
+      <h2>Sign up!</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="form-el">
-          <label htmlFor="firstName">First Name:</label>
+          <label className="form-label" htmlFor="firstName">First Name:</label>
           <input
+            className="form-input"
             name="firstName"
             type="firstName"
             id="firstName"
@@ -46,8 +47,9 @@ function Signup(props) {
           />
         </div>
         <div className="form-el">
-          <label htmlFor="lastName">Last Name:</label>
+          <label className="form-label" htmlFor="lastName">Last Name:</label>
           <input
+            className="form-input"
             name="lastName"
             type="lastName"
             id="lastName"
@@ -55,8 +57,9 @@ function Signup(props) {
           />
         </div>
         <div className="form-el">
-          <label htmlFor="email">Email:</label>
+          <label className="form-label" htmlFor="email">Email:</label>
           <input
+            className="form-input"
             name="email"
             type="email"
             id="email"
@@ -64,8 +67,9 @@ function Signup(props) {
           />
         </div>
         <div className="form-el">
-          <label htmlFor="pwd">Password:</label>
+          <label className="form-label" htmlFor="pwd">Password:</label>
           <input
+            className="form-input"
             name="password"
             type="password"
             id="pwd"
