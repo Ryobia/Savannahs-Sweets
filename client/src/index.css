@@ -1,3 +1,6 @@
+@import "react-slideshow-image/dist/styles.css";
+
+
 * {
   box-sizing: border-box;
 }
@@ -57,8 +60,30 @@ button {
   padding: 5px 10px;
 }
 
-#ring {
-  animation: ring 10s linear infinite;
+:root {
+  --primary: #f4957d;
+  --secondary: #afdfdb;
+  --tertiary: #75c9cc;
+  --light: #eceae5;
+  --nude: #fbdcce;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+font-family: 'Handlee', cursive;  padding: 0;
+  background-color: var(--nude);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 220, 206, 1) 65%,
+    rgba(175, 223, 219, 1) 100%
+  );
+}
+
+#logo-group:hover > #ring {
+  animation: ring 5s linear infinite reverse;
   transform-origin: center;
   transform-box: fill-box;
 }
@@ -70,5 +95,70 @@ button {
   to {
     transform: rotateZ(360deg);
   }
+}
+
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-bar h2 {
+  padding: 0px 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  animation: navbar 1s;
+}
+
+a:hover {
+  color: var(--tertiary);
+}
+
+.home-content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+.home-div {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.left-pop {
+  transform: scaleX(-1);
+}
+
+.home-text {
+  width: 50%;
+  margin: auto;
+  margin-top: 5em;
+
+}
+
+.home-div h3 {
+  font-size: 22px;
   
+}
+
+.slideshow {
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+}
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
 }

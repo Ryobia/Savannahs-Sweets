@@ -2,10 +2,10 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className="Logo-div">
+    <div className="logo-div">
       <svg
-        width="175"
-        height="175"
+        width="200"
+        height="200"
         viewBox="0 0 375 375"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +52,8 @@ const Logo = () => {
           />
         </defs>
       </svg>
+
+      
     </div>
   );
 };
