@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
-import { StoreProvider } from "./utils/GlobalState";
 import Home from "./components/Home";
 import About from "./components/About";
 import Login from "./components/Login";
@@ -49,13 +48,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <StoreProvider>
           <Nav currentpage={currentpage} setCurrentPage={setCurrentPage}></Nav>
           <main>
             {renderPage()}
           </main>
-          <OrderOverlay></OrderOverlay>
-        </StoreProvider>
+          {/* <OrderOverlay></OrderOverlay> */}
       </div>
     </ApolloProvider>
   );

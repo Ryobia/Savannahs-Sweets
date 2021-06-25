@@ -1,33 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Logo from "../Logo";
 
 const Nav = (props) => {
-  const { currentPage, setCurrentPage } = props;
+  const { setCurrentPage } = props;
 
   return (
     <div className="nav-div">
       <header>
-        <a href="#home">
-          <span onClick={() => setCurrentPage("home")}>
-            <Logo />
-          </span>
-        </a>
-        <section className="nav-section">
           <div className="nav-bar">
+            <a href="#home">
+              <span onClick={() => setCurrentPage("home")}>
+                <Logo />
+              </span>
+            </a>
             <h2>
               <a href="#about">
-                <span onClick={() => setCurrentPage("about")}>About Me</span>
+                <span onClick={() => setCurrentPage("about")}>The Baker</span>
               </a>
             </h2>
             <h2>
               <a href="#products">
-                <span onClick={() => setCurrentPage("products")}>Products</span>
+                <span onClick={() => setCurrentPage("products")}>The Goodies</span>
               </a>
             </h2>
             <h2>
               <a href="#order">
-                <span onClick={() => setCurrentPage("order")}>Order</span>
+                <span onClick={() => setCurrentPage("order")}>Order Now</span>
               </a>
             </h2>
             <h2>
@@ -40,12 +39,11 @@ const Nav = (props) => {
             <h2>
               <a href="#login">
                 <span onClick={() => setCurrentPage("login")}>
-                  Login/Signup
+                  Login/Logout
                 </span>
               </a>
             </h2>
           </div>
-        </section>
       </header>
     </div>
   );
