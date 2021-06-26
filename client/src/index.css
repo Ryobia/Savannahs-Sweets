@@ -1,11 +1,11 @@
 @import "react-slideshow-image/dist/styles.css";
 
-
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   text-align: center;
   min-height: 100%;
 }
@@ -18,12 +18,12 @@ body {
 }
 
 h2 {
-  color: #F4957D;
+  color: #f4957d;
 }
 
 button {
-  background-color: #AFDFDB;
-  border: 3px solid #75C9CC;
+  background-color: #afdfdb;
+  border: 3px solid #75c9cc;
   padding: 5px 10px;
   color: #fff;
   font-size: 16px;
@@ -31,17 +31,17 @@ button {
 }
 
 .card {
-  border: 3px solid #75C9CC;
+  border: 3px solid #75c9cc;
   width: 300px;
   padding: 10px;
   margin: 20px;
-  background-color: #FBDCCE;
+  background-color: #fbdcce;
 }
 
 .card-title {
   font-weight: bold;
   font-size: 24px;
-  color: #F4957D;
+  color: #f4957d;
   text-decoration: underline;
 }
 
@@ -53,7 +53,7 @@ button {
 .about-image {
   width: 400px;
   padding: 20px;
-  border: 3px solid #75C9CC
+  border: 3px solid #75c9cc;
 }
 
 .form-el {
@@ -73,7 +73,8 @@ html {
 }
 
 body {
-font-family: 'Handlee', cursive;  padding: 0;
+  font-family: "Handlee", cursive;
+  padding: 0;
   background-color: var(--nude);
   background: linear-gradient(
     0deg,
@@ -97,10 +98,77 @@ font-family: 'Handlee', cursive;  padding: 0;
   }
 }
 
+.menu-container {
+  position: relative;
+}
+.menu {
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+.menu-trigger {
+  background: #ffffff;
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+}
+
+.menu-trigger:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-trigger span {
+  font-weight: 700;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.menu-trigger img {
+  border-radius: 90px;
+}
 .nav-bar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
@@ -119,13 +187,65 @@ a:hover {
   color: var(--tertiary);
 }
 
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 36px;
+  border: none;
+  outline: none;
+  color: var(--primary);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: var(--tertiary);
+}
+
+.login-nav {
+  font-size: 36px;
+
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--light);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: var(--primary);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  color: var(--tertiary);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 .home-content {
   width: 80%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
 }
 
 .home-div {
@@ -142,12 +262,10 @@ a:hover {
   width: 50%;
   margin: auto;
   margin-top: 5em;
-
 }
 
 .home-div h3 {
   font-size: 22px;
-  
 }
 
 .slideshow {
@@ -161,4 +279,47 @@ a:hover {
   background-size: cover;
   background-position: center;
   height: 500px;
+}
+
+
+@media (max-width: 800px) {
+  button .dropbtn {
+    font-size: 22px;
+  }
+
+  .login-nav {
+    font-size: 22px;
+  }
+
+  .home-content {
+    width: 100%;
+  }
+  
+  .home-text h3{
+    font-size: 15px;
+    
+  }
+  .home-text h1 {
+    font-size: 26px;
+  }
+
+  .left-pop, .right-pop {
+    height: 80px;
+  }
+}
+
+@media (max-width: 550px) {
+  .each-slide > div {
+    height: 300px;
+  }
+  .left-pop, .right-pop {
+    display: none;
+  }
+  .home-text {
+    width: 100%;
+  }
+  .dropdown-content a {
+    padding: 5px;
+    font-size: 16px;
+  }
 }
