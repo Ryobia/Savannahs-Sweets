@@ -16,14 +16,30 @@ const resolvers = {
       throw new AuthenticationError("You are not logged in");
     },
     users: async () => {
-      return User.find().select("__-v -password").populate("orders");
+      return User.find()
+      .select('-__v -password')
+      .populate("orders");
     },
+    products: async () => {
+      return Product.find()
+    },
+    product: async (parent, { _id }) => {
+      return Product.findOne({ _id });
+    },
+    order: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id)
+        .populate('orders');
+        return user
+      };
+      
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-
+      
       return { token, user };
     },
     login: async (parent, { email, password }) => {
