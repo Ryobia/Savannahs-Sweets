@@ -31,10 +31,10 @@ type Auth {
 
 type Query {
     me: User
+    user:(_id: ID!): User
     users: [User]
     products: [Product]
     product:(_id: ID!): Product
-    order(_id: ID!): Order
 }
 
 type Mutation {

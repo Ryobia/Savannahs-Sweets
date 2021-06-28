@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Order } = require("../models");
+const { User, Product } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -20,19 +20,16 @@ const resolvers = {
       .select('-__v -password')
       .populate("orders");
     },
+    user: async (parent, { _id }) => {
+      return User.findById({ _id })
+      .select("-__v -password")
+      .populate("orders");
+    },
     products: async () => {
       return Product.find()
     },
     product: async (parent, { _id }) => {
       return Product.findOne({ _id });
-    },
-    order: async (parent, { _id }, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id)
-        .populate('orders');
-        return user
-      };
-      
     }
   },
   Mutation: {
