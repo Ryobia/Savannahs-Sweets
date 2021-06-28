@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product } = require("../models");
+const { User, Product, Order } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -16,28 +16,15 @@ const resolvers = {
       throw new AuthenticationError("You are not logged in");
     },
     users: async () => {
-      return User.find()
-      .select('-__v -password')
-      .populate("orders");
+      return User.find().select("__-v -password").populate("orders");
     },
-    user: async (parent, { _id }) => {
-      return User.findById({ _id })
-      .select("-__v -password")
-      .populate("orders");
-    },
-    products: async () => {
-      return Product.find()
-    },
-    product: async (parent, { _id }) => {
-      return Product.findOne({ _id });
-    }
   },
 
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-      
+
       return { token, user };
     },
 
