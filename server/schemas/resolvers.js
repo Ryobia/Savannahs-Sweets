@@ -16,8 +16,21 @@ const resolvers = {
       throw new AuthenticationError("You are not logged in");
     },
     users: async () => {
-      return User.find().select("__-v -password").populate("orders");
+      return User.find()
+      .select("-__v -password")
+      .populate("orders");
     },
+    user: async (parent, { _id }) => {
+      return User.findById(_id)
+      .select("-__v -password")
+      .populate("orders");
+    },
+    products: async () => {
+      return Product.find()
+    },
+    product: async (parent, { _id }) => {
+      return Product.findById(_id);
+    }
   },
 
   Mutation: {
@@ -53,14 +66,11 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    updateProduct: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
+    updateProduct: async (parent, args) => {
 
-      return await Product.findByIdAndUpdate(
-        _id,
-        { $inc: { quantity: decrement } },
-        { new: true }
-      );
+      return await Product.findByIdAndUpdate(args._id, args, {
+        new: true
+      });
     },
 
     login: async (parent, { email, password }) => {
