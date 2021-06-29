@@ -5,6 +5,14 @@ import { useQuery } from '@apollo/react-hooks';
 
 function ProductList() {
     const { data } = useQuery(QUERY_ALL_PRODUCTS);
+
+    if (!data) {
+        return (
+            <div>
+                No available products
+            </div>
+        )
+    }
     return (
         <div className="productlist-div">
             <h2>Sweets</h2>
