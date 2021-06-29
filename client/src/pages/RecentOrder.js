@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USER } from "../utils/queries";
+import { QUERY_USERS } from "../utils/queries";
 
 function RecentOrders() {
-    const { data } = useQuery(QUERY_USER);
+    const { data } = useQuery(QUERY_USERS);
   let user;
 
   if (data) {

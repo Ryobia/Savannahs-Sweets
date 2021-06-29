@@ -8,7 +8,11 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("orders");
+          .populate("orders")
+          .populate({
+            path: 'orders',
+            populate: 'products'
+          });
 
         return userData;
       }
@@ -19,11 +23,6 @@ const resolvers = {
     users: async () => {
       return User.find()
       .select("-__v -password")
-      .populate('orders')
-      .populate({
-        path: 'orders',
-        populate: 'products'
-      })
     },
     user: async (parent, { _id }) => {
       return User.findById(_id)
