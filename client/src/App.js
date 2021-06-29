@@ -7,8 +7,7 @@ import Nav from "./components/Nav";
 import About from './pages/About';
 import Login from './pages/Login';
 import Order from './components/Order';
-import Product from "./components/Product";
-import RecentOrders from './components/RecentOrders';
+import RecentOrders from './pages/RecentOrder';
 import OrderOverlay from './components/OrderOverlay';
 import ProductList from './components/ProductList';
 import Signup from './pages/Signup';
@@ -39,7 +38,7 @@ function App() {
       case 'recent':
         return <RecentOrders />;
       case 'products':
-        return <Product />;
+        return <ProductList />;
       case 'login':
         return <Login currentpage={currentpage} setCurrentPage={setCurrentPage}/>;
       case 'signup':

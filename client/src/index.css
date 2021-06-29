@@ -61,6 +61,7 @@ button {
   width: 400px;
   padding: 20px;
   border: 3px solid #75C9CC
+  
 }
 
 .form-el {
@@ -164,8 +165,30 @@ a:hover {
   height: 500px;
 }
 
+.about-text {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
 @media screen and (max-width: 768px) {
   .form-input {
     width: 75%;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-image {
+    width: auto;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-image {
+    width: 100%;
+    height: auto;
   }
 }
