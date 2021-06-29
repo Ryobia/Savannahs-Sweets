@@ -198,6 +198,9 @@ a:hover {
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
+.dropdown {
+  width: 235px;
+}
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -281,6 +284,73 @@ a:hover {
   height: 500px;
 }
 
+.order-div {
+  display: flex;
+  margin: auto;
+  margin-top: 7em;
+  width: min-content;
+  background-color: var(--tertiary);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+  
+}
+
+.order-div > img {
+  border-radius: 40px;
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 355px;
+  margin: auto;
+  font-size: 20px;
+  padding-right: 1em;
+}
+
+.contact-form > input {
+  width: 100%;
+  line-height: 2;
+}
+.contact-form > input[type=submit] {
+  width: 50%;
+  margin: auto;
+  margin-top: .8em;
+  padding: 1em;
+  background-color: var(--primary);
+  border-radius: 1em;
+}
+.contact-form > input[type=submit]:hover {
+  background-color: var(--nude);
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+}
+.contact-form > label {
+  width: 100%;
+  line-height: 2;
+}
+.contact-form > textarea {
+  width: 100%;
+  line-height: 2;
+}
+
+.name-section {
+  display: flex;
+}
+
+.names {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.names > input, label {
+  width: 90%;
+  line-height: 2;
+  margin: auto;
+}
+
 
 @media (max-width: 800px) {
   button .dropbtn {
@@ -306,7 +376,12 @@ a:hover {
   .left-pop, .right-pop {
     height: 80px;
   }
-}
+
+  .order-div > img {
+    display: none;
+  }
+
+  
 
 @media (max-width: 550px) {
   .each-slide > div {
@@ -322,4 +397,8 @@ a:hover {
     padding: 5px;
     font-size: 16px;
   }
+  .order-div {
+    width: 100%;
+  }
+}
 }

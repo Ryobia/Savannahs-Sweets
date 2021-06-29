@@ -6,17 +6,12 @@ import Logo from "../Logo";
 const Nav = (props) => {
   const { setCurrentPage } = props;
 
-  const [isActive, setIsActive] = useState(false);
 
   return (
     <div className="nav-div">
       <header>
         <div className="nav-bar">
-          <a href="#home">
-            <span onClick={() => setCurrentPage("home")}>
-              <Logo />
-            </span>
-          </a>
+          
 
           <div class="dropdown">
             <button class="dropbtn">
@@ -49,6 +44,11 @@ const Nav = (props) => {
               </h2>
             </div>
           </div>
+          <a href="#home">
+            <span onClick={() => setCurrentPage("home")}>
+              <Logo />
+            </span>
+          </a>
           <h2 className='login-nav'>
             <a href="#login">
               <span onClick={() => setCurrentPage("login")}>Login/Logout</span>

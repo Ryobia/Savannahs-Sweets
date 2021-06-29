@@ -28,7 +28,7 @@ const Home = () => {
         <img className='left-pop' src={pop} height='100px' alt='cakepop'></img>
         <div className="home-text">
           <h1>Welcome To Savannah's Sweets!</h1>
-          <h3 className=''>
+          <h3>
             Founded by Savannah in 2021, this humble little bakery aims to serve
             you with made-to-order sweets for any occasion. Take a look around
             and be sure to fill out an order form and we'll get back to you as
