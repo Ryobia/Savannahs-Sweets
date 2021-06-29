@@ -19,16 +19,16 @@ const resolvers = {
     users: async () => {
       return User.find()
       .select("-__v -password")
-      .populate("orders")
+      .populate('orders')
       .populate({
         path: 'orders',
         populate: 'products'
-      });
+      })
     },
     user: async (parent, { _id }) => {
       return User.findById(_id)
       .select("-__v -password")
-      .populate("orders")
+      .populate('orders')
       .populate({
         path: 'orders',
         populate: 'products'
@@ -57,14 +57,16 @@ const resolvers = {
       return product;
     },
 
-    addOrder: async (parent, { products }, context) => {
+    addOrder: async (parent, args , context) => {
       console.log(context);
       if (context.user) {
-        const order = new Order({ products });
+        const order = await Order.create(args);
 
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { orders: order },
-        });
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { orders: order._id } },
+          { new: true }
+        );
 
         return order;
       }
