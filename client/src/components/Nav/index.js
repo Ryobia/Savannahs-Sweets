@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+import React from "react";
 
 import Logo from "../Logo";
 
@@ -11,7 +10,6 @@ const Nav = (props) => {
     <div className="nav-div">
       <header>
         <div className="nav-bar">
-          
 
           <div class="dropdown">
             <button class="dropbtn">
@@ -44,7 +42,7 @@ const Nav = (props) => {
               </h2>
             </div>
           </div>
-          <a href="#home">
+          <a className='main-logo' href="#home">
             <span onClick={() => setCurrentPage("home")}>
               <Logo />
             </span>
