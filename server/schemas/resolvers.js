@@ -15,6 +15,7 @@ const resolvers = {
 
       throw new AuthenticationError("You are not logged in");
     },
+
     users: async () => {
       return User.find()
       .select("-__v -password")
@@ -48,6 +49,12 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    addProduct: async (parent, args) => {
+      const product = await Product.create(args);
+
+      return product;
     },
 
     addOrder: async (parent, { products }, context) => {
