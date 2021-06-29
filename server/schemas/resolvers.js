@@ -18,12 +18,21 @@ const resolvers = {
     users: async () => {
       return User.find()
       .select("-__v -password")
-      .populate("orders");
+      .populate("orders")
+      .populate({
+        path: 'orders',
+        populate: 'products'
+      });
     },
     user: async (parent, { _id }) => {
       return User.findById(_id)
       .select("-__v -password")
-      .populate("orders");
+      .populate("orders")
+      .populate({
+        path: 'orders',
+        populate: 'products'
+      });
+
     },
     products: async () => {
       return Product.find()
