@@ -17,8 +17,30 @@ const resolvers = {
     },
 
     users: async () => {
-      return User.find().select("-__v -password").populate("orders");
+      return User.find()
+      .select("-__v -password")
+      .populate('orders')
+      .populate({
+        path: 'orders',
+        populate: 'products'
+      })
     },
+    user: async (parent, { _id }) => {
+      return User.findById(_id)
+      .select("-__v -password")
+      .populate('orders')
+      .populate({
+        path: 'orders',
+        populate: 'products'
+      });
+
+    },
+    products: async () => {
+      return Product.find()
+    },
+    product: async (parent, { _id }) => {
+      return Product.findById(_id);
+    }
   },
 
   Mutation: {
@@ -35,14 +57,16 @@ const resolvers = {
       return product;
     },
 
-    addOrder: async (parent, { products }, context) => {
+    addOrder: async (parent, args , context) => {
       console.log(context);
       if (context.user) {
-        const order = new Order({ products });
+        const order = await Order.create(args);
 
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { orders: order },
-        });
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { orders: order._id } },
+          { new: true }
+        );
 
         return order;
       }
@@ -60,14 +84,11 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    updateProduct: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
+    updateProduct: async (parent, args) => {
 
-      return await Product.findByIdAndUpdate(
-        _id,
-        { $inc: { quantity: decrement } },
-        { new: true }
-      );
+      return await Product.findByIdAndUpdate(args._id, args, {
+        new: true
+      });
     },
 
     login: async (parent, { email, password }) => {
