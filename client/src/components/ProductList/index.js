@@ -15,7 +15,6 @@ function ProductList() {
     }
     return (
         <div className="productlist-div">
-            <h2>Sweets</h2>
             <div className="row">
             {data.products.map((product) => (
                 <Product

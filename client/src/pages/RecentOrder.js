@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USERS } from "../utils/queries";
 
@@ -24,13 +23,11 @@ function RecentOrders() {
                 <div className="flex-row">
                   {order.products.map(({ _id, image, name, price }, index) => (
                     <div key={index} className="card">
-                      <Link to={`/products/${_id}`}>
                         <img
                           alt={name}
                           src={`/images/${image}`}
                         />
                         <p>{name}</p>
-                      </Link>
                       <div>
                         <span>${price}</span>
                       </div>
