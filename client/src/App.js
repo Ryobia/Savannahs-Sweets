@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Order from './components/Order';
 import RecentOrders from './pages/RecentOrder';
 import OrderOverlay from './components/OrderOverlay';
+import Footer from "./components/Footer";
 import ProductList from './components/ProductList';
 import Signup from './pages/Signup';
 
@@ -51,11 +52,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-          <Nav currentpage={currentpage} setCurrentPage={setCurrentPage}></Nav>
           <main>
+          <Nav currentpage={currentpage} setCurrentPage={setCurrentPage}></Nav>
             {renderPage()}
           </main>
           {/* <OrderOverlay></OrderOverlay> */}
+          <Footer></Footer>
       </div>
     </ApolloProvider>
   );

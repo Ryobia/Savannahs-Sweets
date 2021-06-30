@@ -38,6 +38,9 @@ const Home = () => {
         <img className='right-pop'src={pop} height='100px' alt='cakepop'></img>
 
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 };
