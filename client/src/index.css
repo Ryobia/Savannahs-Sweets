@@ -285,6 +285,34 @@ a:hover {
   height: 500px;
 }
 
+.order-error {
+  display: none;
+  flex-wrap: wrap;
+  background-color: var(--light);
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 16vh;
+  align-content: center;
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+  border-radius: 3em;
+  z-index: 999;
+}
+
+.order-error > * {
+  width: 100%;
+}
+.order-error > button {
+  width: 50%;
+  margin: auto;
+}
+
+.order-error > button:hover {
+  background-color: var(--primary);
+  cursor: pointer;
+}
 .order-div {
   display: flex;
   margin: auto;
