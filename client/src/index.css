@@ -484,6 +484,10 @@ footer {
     display: none;
   }
 
+  .order-error {
+    width: 60%;
+    height: 25vh;
+  }
   
 
 @media (max-width: 555px) {
@@ -517,6 +521,9 @@ footer {
   }
   .dropdown, .login-nav {
     width: 87px;
+  }
+  .order-error {
+    width: 90%;
   }
 }
 }
