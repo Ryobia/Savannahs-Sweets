@@ -19,10 +19,7 @@ function ProductList() {
             {data.products.map((product) => (
                 <Product
                     key={product._id}
-                    _id={product._id}
-                    image={product.photo}
-                    name={product.name}
-                    price={product.price}
+                    {...product}
                 ></Product>
             ))}
             </div>
