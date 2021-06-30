@@ -41,12 +41,13 @@ export default function Order() {
     <div>
       <div id='errorModal'className='order-error'>
         <h2>ERROR</h2>
-        <h3>Please enter form completely</h3>
+        <h3>Please fill out form completely</h3>
         <button id='errorBtn' onClick={renderError}>OK</button>
 
       </div>
       <div id='successModal'className='order-error'>
         <h2>SUCCESS</h2>
+        <h3>Thank you for placing an order!</h3>
         <h3>Please allow for up to 24 hours for someone to confirm your order.</h3>
         <button id='errorBtn' onClick={renderError}>OK</button>
 
