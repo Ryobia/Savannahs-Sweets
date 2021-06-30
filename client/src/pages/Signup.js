@@ -30,10 +30,6 @@ function Signup(props) {
 
   return (
     <div className="">
-      {/* {<Link to="/login">
-        ← Go to Login
-      </Link> } */}
-
       <h2>Sign up!</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="form-el">
