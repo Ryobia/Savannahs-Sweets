@@ -35,7 +35,7 @@ const Home = () => {
             soon as possible.
           </h3>
         </div>
-        <img src={pop} height='100px' alt='cakepop'></img>
+        <img className='right-pop'src={pop} height='100px' alt='cakepop'></img>
 
       </div>
     </div>

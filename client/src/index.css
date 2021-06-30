@@ -1,11 +1,11 @@
 @import "react-slideshow-image/dist/styles.css";
 
-
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   text-align: center;
   min-height: 100%;
 }
@@ -24,12 +24,12 @@ body {
 }
 
 h2 {
-  color: #F4957D;
+  color: #f4957d;
 }
 
 button {
-  background-color: #AFDFDB;
-  border: 3px solid #75C9CC;
+  background-color: #afdfdb;
+  border: 3px solid #75c9cc;
   padding: 5px 10px;
   color: #fff;
   font-size: 16px;
@@ -38,17 +38,17 @@ button {
 }
 
 .card {
-  border: 3px solid #75C9CC;
+  border: 3px solid #75c9cc;
   width: 300px;
   padding: 10px;
   margin: 20px;
-  background-color: #FBDCCE;
+  background-color: #fbdcce;
 }
 
 .card-title {
   font-weight: bold;
   font-size: 24px;
-  color: #F4957D;
+  color: #f4957d;
   text-decoration: underline;
 }
 
@@ -60,8 +60,7 @@ button {
 .about-image {
   width: 400px;
   padding: 20px;
-  border: 3px solid #75C9CC
-  
+  border: 3px solid #75c9cc;
 }
 
 .form-el {
@@ -84,11 +83,28 @@ button {
   --nude: #fbdcce;
 }
 
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Handlee", cursive;
+  padding: 0;
+  background-color: var(--nude);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 220, 206, 1) 65%,
+    rgba(175, 223, 219, 1) 100%
+  );
+}
+
 #logo-group:hover > #ring {
   animation: ring 5s linear infinite reverse;
   transform-origin: center;
   transform-box: fill-box;
 }
+
+
 
 @keyframes ring {
   from {
@@ -99,17 +115,82 @@ button {
   }
 }
 
+.menu-container {
+  position: relative;
+}
+.menu {
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+.menu-trigger {
+  background: #ffffff;
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+}
+
+.menu-trigger:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-trigger span {
+  font-weight: 700;
+  vertical-align: middle;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.menu-trigger img {
+  border-radius: 90px;
+}
 .nav-bar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
 
-.nav-bar h2 {
-  padding: 0px 20px;
-}
+
 
 a {
   text-decoration: none;
@@ -121,13 +202,69 @@ a:hover {
   color: var(--tertiary);
 }
 
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 36px;
+  border: none;
+  outline: none;
+  color: var(--primary);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.dropdown {
+  width: 235px;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: var(--tertiary);
+}
+
+.login-nav {
+  font-size: 36px;
+
+  width: 235px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--light);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: var(--primary);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  color: var(--tertiary);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 .home-content {
   width: 80%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
 }
 
 .home-div {
@@ -144,12 +281,10 @@ a:hover {
   width: 50%;
   margin: auto;
   margin-top: 5em;
-
 }
 
 .home-div h3 {
   font-size: 22px;
-  
 }
 
 .slideshow {
@@ -191,4 +326,180 @@ a:hover {
     width: 100%;
     height: auto;
   }
+}
+.order-error {
+  display: none;
+  flex-wrap: wrap;
+  background-color: var(--light);
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 16vh;
+  align-content: center;
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+  border-radius: 3em;
+  z-index: 999;
+}
+
+.order-error > * {
+  width: 100%;
+}
+.order-error > button {
+  width: 50%;
+  margin: auto;
+}
+
+.order-error > button:hover {
+  background-color: var(--primary);
+  cursor: pointer;
+}
+.order-div {
+  display: flex;
+  margin: auto;
+  margin-top: 7em;
+  width: min-content;
+  background-color: var(--tertiary);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+  
+}
+
+.order-div > img {
+  border-radius: 40px;
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 355px;
+  margin: auto;
+  font-size: 20px;
+  padding-right: 1em;
+}
+
+.contact-form > input {
+  width: 100%;
+  line-height: 2;
+}
+.contact-form > input[type=submit] {
+  width: 50%;
+  margin: auto;
+  margin-top: .8em;
+  padding: 1em;
+  background-color: var(--primary);
+  border-radius: 1em;
+}
+.contact-form > input[type=submit]:hover {
+  background-color: var(--nude);
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+}
+.contact-form > label {
+  width: 100%;
+  line-height: 2;
+}
+.contact-form > textarea {
+  width: 100%;
+  line-height: 2;
+}
+
+.name-section {
+  display: flex;
+}
+
+.names {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.names > input, label {
+  width: 90%;
+  line-height: 2;
+  margin: auto;
+}
+
+@media (max-width: 950px) {
+  svg {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 800px) {
+  
+
+  .dropdown .dropbtn{
+    font-size: 22px;
+  }
+
+  .login-nav {
+    font-size: 22px;
+    width: 120px;
+  }
+
+  .dropdown {
+  width: 120px;
+
+  }
+
+  .home-content {
+    width: 100%;
+  }
+  
+  .home-text h3{
+    font-size: 15px;
+    
+  }
+  .home-text h1 {
+    font-size: 26px;
+  }
+
+  .left-pop, .right-pop {
+    height: 80px;
+  }
+
+  .order-div > img {
+    display: none;
+  }
+
+  
+
+@media (max-width: 555px) {
+  .main-logo {
+    order: -1;
+    width: 100%;
+  }
+  
+  svg {
+    height: 200px;
+    width: 200px;
+  }
+  .each-slide > div {
+    height: 300px;
+  }
+  .left-pop, .right-pop {
+    display: none;
+  }
+  .home-text {
+    width: 100%;
+  }
+  .dropdown-content a {
+    padding: 5px;
+    font-size: 16px;
+  }
+  .order-div {
+    width: 100%;
+  }
+  .login-nav, .dropdown .dropbtn {
+    font-size: 16px;
+  }
+  .dropdown, .login-nav {
+    width: 87px;
+  }
+}
 }
