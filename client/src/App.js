@@ -7,9 +7,9 @@ import Nav from "./components/Nav";
 import About from './pages/About';
 import Login from './pages/Login';
 import Order from './components/Order';
-import Product from "./components/Product";
-import RecentOrders from './components/RecentOrders';
+import RecentOrders from './pages/RecentOrder';
 import OrderOverlay from './components/OrderOverlay';
+import Footer from "./components/Footer";
 import ProductList from './components/ProductList';
 import Signup from './pages/Signup';
 
@@ -31,7 +31,7 @@ function App() {
   function renderPage() {
     switch (currentpage) {
       case 'home':
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage}/>;
       case 'about':
         return <About />;
       case 'order':
@@ -39,7 +39,7 @@ function App() {
       case 'recent':
         return <RecentOrders />;
       case 'products':
-        return <Product />;
+        return <ProductList />;
       case 'login':
         return <Login currentpage={currentpage} setCurrentPage={setCurrentPage}/>;
       case 'signup':
@@ -52,11 +52,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-          <Nav currentpage={currentpage} setCurrentPage={setCurrentPage}></Nav>
           <main>
+          <Nav currentpage={currentpage} setCurrentPage={setCurrentPage}></Nav>
             {renderPage()}
           </main>
-          {/* <OrderOverlay></OrderOverlay> */}
+          <OrderOverlay setCurrentPage={setCurrentPage}/>
+          <Footer></Footer>
       </div>
     </ApolloProvider>
   );

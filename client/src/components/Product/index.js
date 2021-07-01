@@ -5,7 +5,6 @@ function Product(product) {
     image,
     name,
     description,
-    _id,
     price
   } = product;
 
@@ -14,11 +13,11 @@ function Product(product) {
       <img
         className="card-image"
         alt={name}
-        src={image}
+        src={`/photos/${image}`}
       />
       <p className="card-title">{name}</p>
       <p className="card-description">{description}</p>
-      <p className="card-price">{price}</p>
+      <p className="card-price">{`$${price}`}</p>
     </div>
   );
 };

@@ -1,23 +1,26 @@
 import React from 'react';
 import Product from '../Product';
-/* import { QUERY_ALL_PRODUCTS } from '../../utils/queries'; */
+import { QUERY_ALL_PRODUCTS } from '../../utils/queries';
+import { useQuery } from '@apollo/react-hooks';
 
 function ProductList() {
-    /* const { data } = useQuery(QUERY_ALL_PRODUCTS); */
+    const { data } = useQuery(QUERY_ALL_PRODUCTS);
+
+    if (!data) {
+        return (
+            <div>
+                No available products
+            </div>
+        )
+    }
     return (
-        <div className="productlist-div">
-            <h2>Sweets</h2>
-            <div className="row">
-            {/* {data.products.map((product) => (
+        <div className="product-list">
+            {data.products.map((product) => (
                 <Product
                     key={product._id}
-                    _id={product._id}
-                    image={product.photo}
-                    name={product.name}
-                    price={product.price}
+                    {...product}
                 ></Product>
-            ))} */}
-            </div>
+            ))}
         </div>
     )
 }

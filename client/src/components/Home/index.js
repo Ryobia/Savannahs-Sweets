@@ -8,7 +8,8 @@ import { Slide } from "react-slideshow-image";
 
 const slideImages = [image1, image2, image3];
 
-const Home = () => {
+const Home = (props) => {
+  const { setCurrentPage } = props;
   return (
     <div className="home-div">
       <div className="slideshow">
@@ -35,8 +36,11 @@ const Home = () => {
             soon as possible.
           </h3>
         </div>
-        <img src={pop} height='100px' alt='cakepop'></img>
+        <img className='right-pop'src={pop} height='100px' alt='cakepop'></img>
 
+      </div>
+      <div className='home-products'>
+        <p><a href='#products' onClick={() => setCurrentPage("products")}>Click through to our Product Page</a> <br/> OR <br/> <a href='#login' onClick={() => setCurrentPage("login")}>Click here to Login/Signup!</a></p>
       </div>
     </div>
   );
