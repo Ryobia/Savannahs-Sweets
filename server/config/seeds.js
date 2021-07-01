@@ -28,7 +28,7 @@ db.once('open', async () => {
             name: 'Chocolate Cupcake',
             description: 'A chocolate cupcake topped with chocolate frosting and sprinkles',
             image: 'chocolatecupcake.jpg',
-            price: 1.50
+            price: 1.75
         },
         {
             name: 'Cinnamon Roll',
