@@ -58,15 +58,13 @@ export const UPDATE_PRODUCT = gql`
 
 
 export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
-      _id
-      purchaseDate
-      products {
-        _id
-      }
-    }
+  mutation addOrder($orderText: String!) {
+    addOrder(orderText: $orderText) {
+    _id
+    orderDate
+    orderText
   }
+}
 `;
 
 

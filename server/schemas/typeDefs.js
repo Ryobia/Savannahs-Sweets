@@ -53,12 +53,7 @@ const typeDefs = gql`
       image: String!
       price: Float!
     ): Product
-    addOrder(
-      firstName: String!
-      lastName: String!
-      email: String!
-      orderText: String!
-    ): Order
+    addOrder(orderText: String!): Order
     updateUser(
       _id: ID!
       firstName: String
