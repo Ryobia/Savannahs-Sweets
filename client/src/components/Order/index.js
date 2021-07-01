@@ -1,7 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import cakepops from '../../photos/cakepop1.JPG';
-import { ADD_ORDER } from '../utils/mutations';
 
 
 
