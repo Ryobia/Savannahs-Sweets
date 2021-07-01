@@ -1,6 +1,8 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import cakepops from '../../photos/cakepop1.JPG';
+import { ADD_ORDER } from '../utils/mutations';
+
 
 
 export default function Order() {
@@ -24,6 +26,8 @@ export default function Order() {
 
       document.getElementById('successModal').style.display = 'flex';
       document.getElementById('orderDiv').style.opacity = 0.4;
+
+
 
   } else {
     document.getElementById('errorModal').style.display = 'flex';
