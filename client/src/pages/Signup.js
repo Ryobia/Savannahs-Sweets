@@ -80,7 +80,7 @@ function Signup(props) {
           </div> : null
          }
         <div className="form-el">
-          <button type="submit">
+          <button className="btn" type="submit">
             Submit
           </button>
         </div>
