@@ -1,5 +1,5 @@
 import React from "react";
-import image from '../photos/cakepop1.JPG';
+import image from '../photos/about-image-placeholder.jpg';
 
 function About() {
     return (
