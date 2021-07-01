@@ -13,7 +13,7 @@ function RecentOrders() {
     return (
       <>
       <div className="container">
-
+        <h2>My Recent Orders</h2>
         {user ? (
           <>
             <h2>Order History for {user.firstName} {user.lastName}</h2>
