@@ -1,4 +1,4 @@
-const { AuthenticationError } = require("apollo-server-express");
+const { AuthenticationError, UserInputError } = require("apollo-server-express");
 const { User, Product, Order } = require("../models");
 const { signToken } = require("../utils/auth");
 
@@ -44,8 +44,12 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, args) => {
+      if (!args || args.password.length < 6) {
+        throw new UserInputError('All fields required and password length must be 6 characters or more.')
+      } 
       const user = await User.create(args);
       const token = signToken(user);
+
 
       return { token, user };
     },

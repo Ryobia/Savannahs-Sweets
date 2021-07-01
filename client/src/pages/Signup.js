@@ -6,18 +6,20 @@ import { ADD_USER } from "../utils/mutations";
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleFormSubmit = async event => {
     event.preventDefault();
+    try {
     const mutationResponse = await addUser({
       variables: {
         email: formState.email, password: formState.password,
-        firstName: formState.firstName, lastName: formState.lastName
-      }
-    });
+        firstName: formState.firstName, lastName: formState.lastName } })
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+  } catch (e) {
+    console.log (e)
+  }
   };
 
   const handleChange = event => {
@@ -72,6 +74,11 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
+        {
+          error ? <div>
+            <p className="error-text" >All fields required and password must be at least 6 characters long</p>
+          </div> : null
+         }
         <div className="form-el">
           <button className="btn" type="submit">
             Submit
