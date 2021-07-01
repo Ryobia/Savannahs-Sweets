@@ -6,12 +6,26 @@ const orderSchema = new Schema(
       type: Date,
       default: Date.now
     },
-    products: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    ]
+    firstName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    lastName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!']
+    },
+    orderText: {
+      type: String,
+      required: true
+    }
    
   }
 );

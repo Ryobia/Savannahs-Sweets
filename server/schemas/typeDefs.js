@@ -12,7 +12,10 @@ const typeDefs = gql`
   type Order {
     _id: ID
     orderDate: String
-    products: [Product]
+    firstName: String
+    lastName: String
+    email: String
+    orderText: String
   }
 
   type Product {
@@ -50,7 +53,12 @@ const typeDefs = gql`
       image: String!
       price: Float!
     ): Product
-    addOrder(products: [ID]!): Order
+    addOrder(
+      firstName: String!
+      lastName: String!
+      email: String!
+      orderText: String!
+    ): Order
     updateUser(
       _id: ID!
       firstName: String
