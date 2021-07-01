@@ -56,14 +56,14 @@ const Login = (props) => {
             <p className="error-text" >The provided credentials are incorrect</p>
           </div> : null
          }
-        <div className="">
-          <button type="submit">
+        <div>
+          <button className="btn" type="submit">
             Submit  
           </button>
         </div>
       </form>
       <div>
-        <p>Don't have a login? Sign up <a href="#signup"><span onClick={() => setCurrentPage("signup")}>here</span></a></p>
+        <p>Users must be logged in to place an order</p> <p>Don't have a login? Sign up <a href="#signup"><span onClick={() => setCurrentPage("signup")}>here</span></a></p>
       </div>
     </div>
   );

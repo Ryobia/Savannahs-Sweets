@@ -31,7 +31,7 @@ function App() {
   function renderPage() {
     switch (currentpage) {
       case 'home':
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage}/>;
       case 'about':
         return <About />;
       case 'order':
@@ -56,7 +56,7 @@ function App() {
           <Nav currentpage={currentpage} setCurrentPage={setCurrentPage}></Nav>
             {renderPage()}
           </main>
-          {/* <OrderOverlay></OrderOverlay> */}
+          <OrderOverlay setCurrentPage={setCurrentPage}/>
           <Footer></Footer>
       </div>
     </ApolloProvider>
