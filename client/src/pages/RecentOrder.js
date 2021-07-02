@@ -10,6 +10,14 @@ function RecentOrders() {
     user = data.user;
   }
 
+  if (!data) {
+    return (
+      <div>
+        No orders yet!
+      </div>
+    )
+  }
+
     return (
       <>
       <div className="container">
