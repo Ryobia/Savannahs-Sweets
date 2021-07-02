@@ -1,32 +1,33 @@
 import React from "react";
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USERS } from "../utils/queries";
+import { QUERY_ME } from "../utils/queries";
 
 function RecentOrders() {
-    const { data } = useQuery(QUERY_USERS);
+  const { data } = useQuery(QUERY_ME);
   let user;
 
   if (data) {
-    user = data.user;
+    user = data.me;
   }
+
+  if (!data) {
+    return (
+      <div>
+        No orders yet!
+      </div>
+    )
+  }
+  console.log(user);
 
     return (
       <>
-      <div className="container">
+      <div className="recent-orders">
         <h2>My Recent Orders</h2>
         {user ? (
           <>
-            <h2>Order History for {user.firstName} {user.lastName}</h2>
             {user.orders.map((order) => (
               <div key={order._id}>
-                <h3>{new Date(parseInt(order.orderDate)).toLocaleDateString()}</h3>
-                <div className="flex-row">
-                  {order.products.map(({ _id, orderText }, index) => (
-                    <div key={index}>
-                        <p>{orderDate}: {orderText}</p>
-                    </div>
-                  ))}
-                </div>
+                <p>{new Date(parseInt(order.orderDate)).toLocaleDateString()}: {order.orderText}</p>
               </div>
             ))}
           </>

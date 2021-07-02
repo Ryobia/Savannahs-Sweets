@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #f4957d;
+  --secondary: #afdfdb;
+  --tertiary: #75c9cc;
+  --light: #eceae5;
+  --nude: #fbdcce;
+}
+
 html,
 body {
   text-align: center;
@@ -94,12 +102,11 @@ a:hover {
   width: 30%;
 }
 
-:root {
-  --primary: #f4957d;
-  --secondary: #afdfdb;
-  --tertiary: #75c9cc;
-  --light: #eceae5;
-  --nude: #fbdcce;
+.recent-orders {
+  border: 3px solid white;
+  padding: 20px;
+  width: 50%;
+  margin: auto;
 }
 
 #logo-group:hover > #ring {
