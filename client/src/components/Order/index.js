@@ -6,6 +6,7 @@ import Auth from "../../utils/auth";
 import { ADD_ORDER } from "../../utils/mutations";
 
 
+
 export default function Order() {
   const [formState, setFormState] = useState({ orderText: '' });
   const [addOrder, { error }] = useMutation(ADD_ORDER);
@@ -40,6 +41,8 @@ export default function Order() {
 
       document.getElementById('successModal').style.display = 'flex';
       document.getElementById('orderDiv').style.opacity = 0.4;
+
+
 
   } else {
     document.getElementById('errorModal').style.display = 'flex';

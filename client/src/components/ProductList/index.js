@@ -14,15 +14,13 @@ function ProductList() {
         )
     }
     return (
-        <div className="productlist-div">
-            <div className="row">
+        <div className="product-list">
             {data.products.map((product) => (
                 <Product
                     key={product._id}
                     {...product}
                 ></Product>
             ))}
-            </div>
         </div>
     )
 }
