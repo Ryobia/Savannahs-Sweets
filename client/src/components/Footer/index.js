@@ -16,7 +16,7 @@ const Footer = () => {
           rel="noreferrer"
           href="https://www.facebook.com/SavannahSweets00/"
         >
-          <img src={facebook} height='30px' alt='facebook icon'/>
+          <img className='fbook' src={facebook} height='30px' alt='facebook icon'/>
         </a>
         </div>
       </footer>

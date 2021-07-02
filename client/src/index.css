@@ -477,6 +477,11 @@ footer {
   clear: both;
 }
 
+footer > p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 
 
 @media (max-width: 950px) {
@@ -489,7 +494,9 @@ footer {
 
 @media (max-width: 800px) {
   
-
+  footer {
+    font-size: 15px;
+  }
   .dropdown .dropbtn{
     font-size: 22px;
   }
@@ -516,6 +523,10 @@ footer {
     font-size: 26px;
   }
 
+  .home-products > p {
+    font-size: 15px;
+  }
+
   .left-pop, .right-pop {
     height: 80px;
   }
@@ -531,6 +542,24 @@ footer {
   
 
 @media (max-width: 555px) {
+  .fa-shopping-cart {
+    font-size: 18px;
+  }
+
+  .order-overlay-div > p {
+    font-size: 10px;
+  }
+
+  .order-overlay-div {
+    width: 40px;
+  }
+  
+  footer {
+    font-size: 12px;
+  }
+  .fbook {
+    height: 20px;
+  }
   .main-logo {
     order: -1;
     width: 100%;
