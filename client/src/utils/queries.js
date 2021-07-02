@@ -33,14 +33,8 @@ export const QUERY_ME = gql`
       email
       orders {
         _id
-        orderdate
-        products {
-          _id
-          name
-          description
-          price
-          image
-        }
+        orderDate
+        orderText
       }
     }
   }
@@ -57,13 +51,7 @@ export const QUERY_USERS = gql`
       orders {
         _id
         orderDate
-        products{
-          _id
-          name
-          description
-          image
-          price
-        }
+        orderText
       }
     }
   }
