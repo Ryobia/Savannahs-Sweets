@@ -342,12 +342,12 @@ a:hover {
   display: none;
   flex-wrap: wrap;
   background-color: var(--light);
+  height: min-content;
   width: 30%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 16vh;
   align-content: center;
   box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.87);
   border-radius: 3em;
