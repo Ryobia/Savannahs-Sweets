@@ -26,8 +26,8 @@ function RecentOrders() {
         {user ? (
           <>
             {user.orders.map((order) => (
-              <div key={order._id}>
-                <p>{new Date(parseInt(order.orderDate)).toLocaleDateString()}: {order.orderText}</p>
+              <div key={order._id} className="recent-orders-li">
+                <p><span>{new Date(parseInt(order.orderDate)).toLocaleDateString()}:</span> {order.orderText}</p>
               </div>
             ))}
           </>

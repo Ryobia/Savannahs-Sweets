@@ -23,10 +23,6 @@ export default function Order() {
     } catch (e) {
       console.log (e)
     }
-    
-
-    
-
 
     if (e.target.first.value && e.target.last.value && e.target.email.value && e.target.order.value){
 
