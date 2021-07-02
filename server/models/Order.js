@@ -6,12 +6,10 @@ const orderSchema = new Schema(
       type: Date,
       default: Date.now
     },
-    products: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    ]
+    orderText: {
+      type: String,
+      required: true
+    }
    
   }
 );

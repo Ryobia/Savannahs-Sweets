@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState } from "react";
 import emailjs from 'emailjs-com';
 import cakepops from '../../photos/cakepop1.JPG';
+import { useMutation } from '@apollo/react-hooks';
+import Auth from "../../utils/auth";
+import { ADD_ORDER } from "../../utils/mutations";
 
 
 
 export default function Order() {
+  const [formState, setFormState] = useState({ orderText: '' });
+  const [addOrder, { error }] = useMutation(ADD_ORDER);
 
-  function sendEmail(e) {
+  const sendEmail = async e => {
     e.preventDefault();
+    
+    try {
+      const mutationResponse = await addOrder({
+        variables: {
+          orderText: formState.orderText } })
+      const token = mutationResponse.data.addOrder.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log (e)
+    }
+    
 
     
 
@@ -39,6 +55,15 @@ export default function Order() {
     document.getElementById('successModal').style.display = 'none'
     document.getElementById('orderDiv').style.opacity = 1;
   }
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
+
 
   return (
     <div>
@@ -73,7 +98,7 @@ export default function Order() {
         <label>Order</label>
         <textarea name="order" />
 
-        <input type="submit" value="Send" />
+        <input name="orderText" type="submit" value="Send" onChange={handleChange} />
       </form>
 
       <img src={cakepops} alt='cakepops' height='263'/>
