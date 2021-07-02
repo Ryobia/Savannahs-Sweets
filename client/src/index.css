@@ -104,9 +104,21 @@ a:hover {
 
 .recent-orders {
   border: 3px solid white;
-  padding: 20px;
   width: 50%;
   margin: auto;
+}
+
+.recent-orders > h2 {
+  border-bottom: 3px solid #fff;
+  margin: 5px 50px;
+}
+
+.recent-orders-li {
+  padding: 0 5px;
+}
+
+.recent-orders-li > p > span {
+  font-weight: bold;
 }
 
 #logo-group:hover > #ring {
@@ -323,6 +335,16 @@ a:hover {
   .about-image {
     width: auto;
     height: 400px;
+  }
+
+  .recent-orders {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recent-orders {
+    width: 90%;
   }
 }
 
