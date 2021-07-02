@@ -52,7 +52,7 @@ const resolvers = {
       return product;
     },
 
-    addOrder: async (parent, args , context) => {
+    addOrder: async (parent, args, context) => {
       console.log(context);
       if (context.user) {
         const order = await Order.create(args);

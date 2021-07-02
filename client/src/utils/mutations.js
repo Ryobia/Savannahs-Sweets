@@ -58,11 +58,11 @@ export const UPDATE_PRODUCT = gql`
 
 
 export const ADD_ORDER = gql`
-  mutation addOrder($orderText: String!) {
-    addOrder(orderText: $orderText) {
-    _id
-    orderDate
-    orderText
+mutation addOrder($orderText: String!) {
+  addOrder(orderText: $orderText) {
+  _id
+  orderDate
+  orderText
   }
 }
 `;

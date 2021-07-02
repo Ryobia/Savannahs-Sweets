@@ -12,9 +12,6 @@ const typeDefs = gql`
   type Order {
     _id: ID
     orderDate: String
-    firstName: String
-    lastName: String
-    email: String
     orderText: String
   }
 
