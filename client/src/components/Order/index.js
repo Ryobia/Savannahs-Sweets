@@ -30,12 +30,12 @@ export default function Order() {
 
     if (e.target.first.value && e.target.last.value && e.target.email.value && e.target.order.value){
 
-    // emailjs.sendForm('service_nealm4f', 'template_cnokitb', e.target, 'user_IsTJzOerRsLBrrVoV9vVV')
-    //   .then((result) => {
-    //       console.log(result.text);
-    //   }, (error) => {
-    //       console.log(error.text);
-    //   });
+    emailjs.sendForm('service_nealm4f', 'template_cnokitb', e.target, 'user_IsTJzOerRsLBrrVoV9vVV')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
 
       e.target.reset();
 
