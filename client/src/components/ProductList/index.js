@@ -14,14 +14,18 @@ function ProductList() {
         )
     }
     return (
+        
         <div className="product-list">
+            <a>
             {data.products.map((product) => (
                 <Product
                     key={product._id}
                     {...product}
                 ></Product>
             ))}
+            </a>
         </div>
+        
     )
 }
 

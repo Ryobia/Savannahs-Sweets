@@ -1,19 +1,21 @@
 import React from "react";
 import image1 from "../../photos/homeSlideshow/image1.png";
+import image4 from "../../photos/homeSlideshow/image4.jpg";
+import image5 from "../../photos/homeSlideshow/image5.jpg";
 import image2 from "../../photos/homeSlideshow/image2.JPG";
 import image3 from "../../photos/homeSlideshow/image3.png";
 import pop from "../../photos/Logo/pop.png";
 
 import { Slide } from "react-slideshow-image";
 
-const slideImages = [image1, image2, image3];
+const slideImages = [image1, image2, image3, image4, image5];
 
 const Home = (props) => {
   const { setCurrentPage } = props;
   return (
     <div className="home-div">
       <div className="slideshow">
-        <Slide easing="ease" autoplay={false}>
+        <Slide easing="ease" autoplay={true}>
           <div className="each-slide">
             <div style={{ backgroundImage: `url(${slideImages[0]})` }}></div>
           </div>
@@ -22,6 +24,12 @@ const Home = (props) => {
           </div>
           <div className="each-slide">
             <div style={{ backgroundImage: `url(${slideImages[2]})` }}></div>
+          </div>
+          <div className="each-slide">
+            <div style={{ backgroundImage: `url(${slideImages[3]})` }}></div>
+          </div>
+          <div className="each-slide">
+            <div style={{ backgroundImage: `url(${slideImages[4]})` }}></div>
           </div>
         </Slide>
       </div>

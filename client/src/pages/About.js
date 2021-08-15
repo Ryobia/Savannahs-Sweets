@@ -1,5 +1,5 @@
 import React from "react";
-import image from '../photos/about-image-placeholder.jpg';
+import image from '../photos/profile-Ss.jpg';
 
 function About() {
     return (
@@ -11,8 +11,15 @@ function About() {
             src={image}
           ></img>
           <div className="about-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra eros efficitur mollis consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas ac cursus ex. Vivamus risus metus, mollis et venenatis sed, auctor vestibulum nisi. Donec eu velit vel nisl accumsan efficitur. Aliquam consectetur porttitor dui at commodo. Sed blandit nec nisi at imperdiet. Morbi ultricies ante eget risus commodo, in faucibus lectus porttitor. Vivamus ultrices mi a nisi egestas vulputate. Donec finibus congue ipsum. Quisque ultricies condimentum nunc ac convallis. Vivamus sem elit, ornare eget commodo ac, tincidunt in eros. Donec accumsan, turpis ut iaculis dapibus, tortor erat vehicula nulla, nec tincidunt urna nisi nec tortor. Cras finibus odio ut sapien aliquet tempor. Ut quam ante, convallis ac dignissim ac, tincidunt ut augue. Integer vel ipsum sagittis, blandit mauris a, suscipit nulla.</p>
-          <p>Nullam finibus magna quis sapien suscipit, in eleifend ligula convallis. Vivamus sed orci quam. Curabitur tempor venenatis augue, ut posuere neque varius at. Aenean fringilla purus congue ipsum accumsan facilisis. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin ante dui, ultricies id auctor non, placerat at urna. Quisque sagittis, mauris a lobortis vestibulum, lorem lacus pharetra orci, nec pulvinar risus ante quis eros. Donec sed venenatis erat, vitae maximus ex. Aenean facilisis dignissim sem. Aliquam congue consequat luctus.</p>
+          <p>Savannah here!  
+
+I was just mindlessly scrolling through the internet like everyone does, and came across some satisfying videos of people making cake pops and I thought, "Hey, that looks fun! I want to do that." Next thing I know I'm elbows deep in some delicious chocolate cake! Making cake pops was so fun and satisfying I couldn't stop! They were a huge hit with my family and they kept encouraging me to branch out and sell them. So I got brave, went way out of my comfort zone, and here we are! <br></br>  
+
+I'm a 24 years old novice baker and I married the love of my life! Who made this AWESOME website for me by the way. He's always been so encouraging and supportive of my dreams. We have THE cutest 9 month old baby girl. She loves to chase after our two little cats and torment the poor things! Who love to eat the sprinkles I accidently drop on the ground. 😛  
+
+I work full time and bake cakes on the side. I'm hoping one day to switch that around, and bake cakes full time and work on the side! XD  
+
+I'm so grateful for all the support I've received and continue to receive from people ordering my cakes pops. I'm constantly experimenting with new colors and flavors and just having so much fun!</p>
           </div>
       </div>
     );
